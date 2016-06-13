@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 15:21:03 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 15:41:11 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	raycast(t_info *info)
 			if (info->map[info->map_x][info->map_y] != '0')
 				info->hit = 1;
 		}
-		if (side == 0)
+		if (info->side == 0)
 			info->perp_wall_dist = (info->map_x - info->raypos_x + (1 - info->step_x) / 2) / info->raydir_x;
 		else
 			info->perp_wall_dist = (info->map_y - info->raypos_y + (1 - info->step_y) / 2) / info->raydir_y;
@@ -76,12 +76,12 @@ void	raycast(t_info *info)
 			info->draw_start = 0;
 		info->draw_start = -info->line_height / 2 + WIN_Y / 2;
 		if (info->draw_end >= WIN_Y)
-			info->draw_emd = WIN_Y - 1;
+			info->draw_end = WIN_Y - 1;
 		if (info->map[info->map_x][info->map_y] != '0')
 			info->col = 0x00FF0000;
 		if (info->side == 1)
 			info->col /= 2;
-		
+		draw_vert_line(info, x);
 		x++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 15:31:52 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 15:40:11 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,9 @@ void			cleanup(t_info *info);
 void			raycast(t_info *info);
 
 void			draw_vert_line(t_info *info, int x);
+
+int				key_press(int keycode, t_info *info);
+
+int				key_release(int keycode, int *f);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 13:19:55 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 14:22:02 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include <mlx.h>
+# include <math.h>
 # define WIN_X 512
 # define WIN_Y 384
 # define ESC 53
@@ -30,6 +31,17 @@ typedef struct	s_info
 	char		**map;
 	int			rows;
 	int			cols;
+	int			map_x;
+	int			map_y;
+	int			step_x;
+	int			step_y;
+	int			hit;
+	int			side;
+	double		side_dist_x;
+	double		side_dist_y;
+	double		delta_dist_x;
+	double		delta_dist_y;
+	double		perp_wall_dist;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;

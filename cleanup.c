@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_info.c                                        :+:      :+:    :+:   */
+/*   cleanup.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/13 08:28:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 10:46:31 by daviwel          ###   ########.fr       */
+/*   Created: 2016/06/13 10:12:16 by daviwel           #+#    #+#             */
+/*   Updated: 2016/06/13 10:17:58 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void	init_info(t_info *info, int x, int y)
+void	cleanup(t_info *info)
 {
-	info->mlx = NULL;
-	info->win = NULL;
-	info->map = NULL;
-	info->rows = x;
-	info->cols = y;
-	info->pos_x = x / 2;
-	info->pos_y = y / 2;
-	info->dir_x = -1;
-	info->dir_y = -1;
-	info->plane_x = 0;
-	info->plane_y = 0.66;
-	info->time = 0;
-	info->old_time = 0;
+	if (info->map != NULL)
+	exit(0);
 }

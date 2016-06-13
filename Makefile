@@ -6,19 +6,19 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/13 07:55:06 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/13 08:55:02 by daviwel          ###   ########.fr        #
+#    Updated: 2016/06/13 09:46:21 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
-SRC = main.c readmap.c init_info.c
+SRC = main.c readmap.c init_info.c keys.c
 
 OBJ = $(SRC:.c=.o)
 
 CFLAG = -Wall -Werror -Wextra
 
-ATTACH = -L libft/ -lft -lmx -framework OpenGL -framework AppKit
+ATTACH = -L libft/ -lft -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
@@ -39,9 +39,14 @@ fclean: clean
 re: fclean all
 
 norme:
-	norminette $(SRC) wolf3d.h
+	norminette $(SRC) wolf.h
 
 q:
 	clang -I lbft/ -c $(SRC)
-	clang $(CFLAG) -o $(NAME) $(OBJ) -L libft/ -lft
+	clang $(CFLAG) -o $(NAME) $(OBJ) $(ATTACH)
 	make clean
+
+run:
+	./wolf3d map 10 10
+
+qr: q run

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_info.c                                        :+:      :+:    :+:   */
+/*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/13 08:28:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 10:46:31 by daviwel          ###   ########.fr       */
+/*   Created: 2016/06/13 09:30:46 by daviwel           #+#    #+#             */
+/*   Updated: 2016/06/13 10:24:19 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void	init_info(t_info *info, int x, int y)
+int	key_hook(int keycode, t_info *info)
 {
-	info->mlx = NULL;
-	info->win = NULL;
-	info->map = NULL;
-	info->rows = x;
-	info->cols = y;
-	info->pos_x = x / 2;
-	info->pos_y = y / 2;
-	info->dir_x = -1;
-	info->dir_y = -1;
-	info->plane_x = 0;
-	info->plane_y = 0.66;
-	info->time = 0;
-	info->old_time = 0;
+	if (keycode == ESC)
+	{
+		ft_printf("Thanks for playing!\n");
+		exit(0);
+	}
+	if (keycode != 256)
+		ft_printf("%d\n", keycode);
+	return (0);
 }

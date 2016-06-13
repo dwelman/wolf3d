@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 14:22:02 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 15:15:33 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ typedef struct	s_info
 	int			step_y;
 	int			hit;
 	int			side;
+	int			line_height;
+	int			draw_start;
+	int			draw_end;
+	int			col;
 	double		side_dist_x;
 	double		side_dist_y;
 	double		delta_dist_x;

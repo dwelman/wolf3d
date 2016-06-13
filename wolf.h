@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 15:23:10 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 15:31:52 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void			cleanup(t_info *info);
 
 void			raycast(t_info *info);
 
-void			draw_vert_line(t_info *info);
+void			draw_vert_line(t_info *info, int x);
 
 #endif

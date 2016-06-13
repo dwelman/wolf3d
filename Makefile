@@ -6,13 +6,13 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/13 07:55:06 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/13 13:23:13 by daviwel          ###   ########.fr        #
+#    Updated: 2016/06/13 15:23:46 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
-SRC = main.c readmap.c init_info.c keys.c cleanup.c raycasting.c
+SRC = main.c readmap.c init_info.c keys.c cleanup.c raycasting.c draw_line.c
 
 OBJ = $(SRC:.c=.o)
 

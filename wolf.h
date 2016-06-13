@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 11:53:52 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 13:19:55 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void			init_info(t_info *info, int x, int y);
 int				key_hook(int keycode, t_info *info);
 
 void			cleanup(t_info *info);
+
+void			raycast(t_info *info);
 
 #endif

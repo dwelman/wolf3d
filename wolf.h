@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 10:46:04 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 11:53:52 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ typedef struct	s_info
 	double		plane_y;
 	double		time;
 	double		old_time;
+	double		camera_x;
+	double		raypos_x;
+	double		raypos_y;
+	double		raydir_x;
+	double		raydir_y;
 }				t_info;
 
 void			readmap(char *file, t_info *info);

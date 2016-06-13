@@ -6,13 +6,13 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/13 07:55:06 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/13 09:46:21 by daviwel          ###   ########.fr        #
+#    Updated: 2016/06/13 11:49:24 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
-SRC = main.c readmap.c init_info.c keys.c
+SRC = main.c readmap.c init_info.c keys.c cleanup.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -47,6 +47,6 @@ q:
 	make clean
 
 run:
-	./wolf3d map 10 10
+	./wolf3d map 20 20
 
 qr: q run

@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 15:40:11 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/13 16:34:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ typedef struct	s_info
 	int			draw_start;
 	int			draw_end;
 	int			col;
+	double		old_dir_x;
+	double		old_plane_x;
+	double		move_speed;
+	double		rot_speed;
 	double		side_dist_x;
 	double		side_dist_y;
 	double		delta_dist_x;

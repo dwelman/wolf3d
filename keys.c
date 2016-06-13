@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 09:30:46 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 15:43:46 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/13 16:36:27 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,35 @@ int	key_press(int keycode, t_info *info)
 	}
 	if (keycode == UP)
 	{
-		ft_printf("Going Forward! (eventually)\n");
+		if (info->map[(int)(info->pos_x + info->dir_x * info->move_speed)][(int)info->pos_y] == 0)
+			info->pos_x += info->dir_x * info->move_speed;
+		if (info->map[(int)info->pos_x][(int)(info->pos_y + info->pos_y * info->move_speed)] == 0)
+			info->pos_y += info->dir_y * info->move_speed;
 	}
 	if (keycode == DOWN)
 	{
-		ft_printf("Going Backwards! (eventually)\n");
+		if (info->map[(int)(info->pos_x - info->dir_x * info->move_speed)][(int)info->pos_y] == 0)
+			info->pos_x -= info->dir_x * info->move_speed;
+		if (info->map[(int)info->pos_x][(int)(info->pos_y - info->pos_y * info->move_speed)] == 0)
+			info->pos_y -= info->dir_y * info->move_speed;
 	}
 	if (keycode == LEFT)
 	{
-		ft_printf("Going LEFT! (eventually)\n");
+		info->old_dir_x = info->dir_x;
+		info->dir_x = info->dir_x * cos(-info->rot_speed) - info->dir_y * sin(-info->rot_speed);
+		info->dir_y = info->old_dir_x * sin(-info->rot_speed) + info->dir_y * cos(-info->rot_speed);
+		info->old_plane_x = info->plane_x;
+		info->plane_x = info->plane_x * cos(-info->rot_speed) - info->plane_y * sin(-info->rot_speed);
+		info->plane_y = info->old_plane_x * sin(-info->rot_speed) + info->plane_y * cos(-info->rot_speed);
 	}
 	if (keycode == RIGHT)
 	{
-		ft_printf("Going RIGHT! (eventually)\n");
+		info->old_dir_x = info->dir_x;
+		info->dir_x = info->dir_x * cos(info->rot_speed) - info->dir_y * sin(info->rot_speed);
+		info->dir_y = info->old_dir_x * sin(info->rot_speed) + info->dir_y * cos(info->rot_speed);
+		info->old_plane_x = info->plane_x;
+		info->plane_x = info->plane_x * cos(info->rot_speed) - info->plane_y * sin(info->rot_speed);
+		info->plane_y = info->old_plane_x * sin(info->rot_speed) + info->plane_y * cos(info->rot_speed);
 	}
 	return (0);
 }

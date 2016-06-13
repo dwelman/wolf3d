@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 15:41:11 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/13 16:36:28 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,8 @@ void	raycast(t_info *info)
 		draw_vert_line(info, x);
 		x++;
 	}
+	/*info->move_speed = 5;
+	info->rot_speed = 3;
+	mlx_key_hook(info->win, key_hook, info);
+	mlx_clear_window(0, info->win);*/
 }

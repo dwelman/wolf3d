@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 09:22:04 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/14 09:26:44 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include "libft/libft.h"
 # include <mlx.h>
 # include <math.h>
-# include <time.h>
-# define WIN_X 512
-# define WIN_Y 384
+# include <sys/time.h>
+# define WIN_X 640
+# define WIN_Y 480
 # define ESC 53
 # define LEFT 123
 # define RIGHT 124

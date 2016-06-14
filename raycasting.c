@@ -6,17 +6,11 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 09:12:38 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 09:29:43 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-
-void	rerender(t_info *info)
-{
-	mlx_clear_window(0, info->win);
-	raycast(info);
-}
 
 void	raycast(t_info *info)
 {
@@ -93,11 +87,11 @@ void	raycast(t_info *info)
 	info->old_time = info->time;
 	info->time = (double)clock();
 	info->frame_time = (info->time - info->old_time) / 1000.0;
-	info->move_speed = info->frame_time * 0.03;
-	info->rot_speed = info->frame_time * 0.03;
+	info->move_speed = 0.003;
+	info->rot_speed = info->frame_time * 0.1;
 	printf("move_speed = %f\n", info->move_speed);
 	//mlx_key_hook(info->win, key_press, info);
-	mlx_clear_window(0, info->win);
-	ft_printf("loop\n");
+	//mlx_clear_window(0, info->win);
+	//ft_printf("loop\n");
 	//mlx_loop(info->mlx);
 }

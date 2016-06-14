@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 09:12:40 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 09:22:04 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct	s_info
 	void		*mlx;
 	void		*win;
 	void		*img;
+	void		*img_data;
 	char		**map;
 	int			rows;
 	int			cols;
@@ -85,6 +86,6 @@ int				key_press(int keycode, t_info *info);
 
 int				key_release(int keycode, t_info *info);
 
-void			rerender(t_info *info);
+int				rerender(t_info *info);
 
 #endif

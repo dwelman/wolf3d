@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 15:14:58 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 17:10:42 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,7 @@ void    		mlx_image_put_pixel(void *mlx, t_img *i,
 void			move_player(t_env *env);
 
 void			draw_line(t_env *env, int x, t_col *col);
+
+void			free_map(t_env *env);
 
 #endif

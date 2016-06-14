@@ -6,11 +6,30 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:28:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 15:29:05 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 17:11:06 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+int		count_lines(char *file)
+{
+	int	i;
+	int	fd;
+	char	*line;
+
+	i = 0;
+	if ((fd = open(file, O_RDONLY)) == -1)
+		ft_printerr("Error reading from file %s\n", file);
+	while (get_next_line(fd, &line))
+	{
+		if (line)
+			free(line);
+		i++;
+	}
+	close(fd);
+	return (i);
+}
 
 void	init_info(t_env *env, char *file, int x, int y)
 {
@@ -19,14 +38,18 @@ void	init_info(t_env *env, char *file, int x, int y)
 	char	**map;
 
 	i = 0;
+	env->map.y = count_lines(file);
 	if ((fd = open(file, O_RDONLY)) == -1)
 		ft_printerr("Error reading from file %s\n", file);
 	if (!(map = (char **)malloc(sizeof(char *) * y + 1)))
 		ft_printerr("Error assigning memory for map\n");
-	while (i < y)
+	env->map.x = 0;
+	while (i < env->map.y)
 	{
 		if (get_next_line(fd, &map[i]) == -1)
 			ft_printerr("Error reading map\n");
+		if (ft_strlen(map[i]) > env->map.x)
+			env->map.x = ft_strlen(map[i]);
 		i++;
 	}
 	env->info.pos.x = x / 2;
@@ -38,4 +61,14 @@ void	init_info(t_env *env, char *file, int x, int y)
 	env->time = 0;
 	env->o_time = 0;
 	env->map.map = map; //remember to free this later
+}
+
+void	free_map(t_env *env)
+{
+	int	i;
+
+	i = -1;
+	while (++i < env->map.y)
+		free(env->map.map[i]);
+	free(env->map.map[i]);
 }

@@ -6,11 +6,17 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 16:36:28 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 08:36:41 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+void	rerender(t_info *info)
+{
+	mlx_clear_window(0, info->win);
+	raycast(info);
+}
 
 void	raycast(t_info *info)
 {
@@ -74,7 +80,7 @@ void	raycast(t_info *info)
 		info->draw_start = -info->line_height / 2 + WIN_Y / 2;
 		if (info->draw_start < 0)
 			info->draw_start = 0;
-		info->draw_start = -info->line_height / 2 + WIN_Y / 2;
+		info->draw_end = info->line_height / 2 + WIN_Y / 2;
 		if (info->draw_end >= WIN_Y)
 			info->draw_end = WIN_Y - 1;
 		if (info->map[info->map_x][info->map_y] != '0')
@@ -84,8 +90,10 @@ void	raycast(t_info *info)
 		draw_vert_line(info, x);
 		x++;
 	}
-	/*info->move_speed = 5;
-	info->rot_speed = 3;
-	mlx_key_hook(info->win, key_hook, info);
-	mlx_clear_window(0, info->win);*/
+	info->move_speed = 0.2;
+	info->rot_speed = 0.2;
+	//mlx_key_hook(info->win, key_press, info);
+	mlx_clear_window(0, info->win);
+	ft_printf("loop\n");
+	//mlx_loop(info->mlx);
 }

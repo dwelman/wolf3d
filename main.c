@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:05:00 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 08:34:28 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/14 08:44:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	init_info(&info, ft_atoi(argv[2]), ft_atoi(argv[3]));
 	readmap(argv[1], &info);
 	info.mlx = mlx_init();
+	info.img = mlx_new_image(info.mlx, WIN_X, WIN_Y);
 	info.win = mlx_new_window(info.mlx, WIN_X, WIN_Y, "Wolf3d");
 	raycast(&info);
 	mlx_hook(info.win, 2, (1L<<0), &key_press, &info);

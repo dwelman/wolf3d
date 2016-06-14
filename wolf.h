@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 16:34:15 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 08:40:24 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct	s_info
 {
 	void		*mlx;
 	void		*win;
+	void		*img;
 	char		**map;
 	int			rows;
 	int			cols;
@@ -79,6 +80,8 @@ void			draw_vert_line(t_info *info, int x);
 
 int				key_press(int keycode, t_info *info);
 
-int				key_release(int keycode, int *f);
+int				key_release(int keycode, t_info *info);
+
+void			rerender(t_info *info);
 
 #endif

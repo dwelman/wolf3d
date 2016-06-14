@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:05:00 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 16:36:25 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 08:34:28 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int argc, char **argv)
 	info.mlx = mlx_init();
 	info.win = mlx_new_window(info.mlx, WIN_X, WIN_Y, "Wolf3d");
 	raycast(&info);
+	mlx_hook(info.win, 2, (1L<<0), &key_press, &info);
+	mlx_hook(info.win, 3, (1L<<1), &key_release, &info);
 	//mlx_key_hook(info.win, key_hook, &info);
 	mlx_loop(info.mlx);
 	return (0);

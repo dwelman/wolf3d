@@ -6,31 +6,37 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:22:07 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 09:29:18 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/14 15:02:32 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-int     rerender(t_info *info)
+void	draw_line(t_env *env, int x, t_col *col)
 {
-	if (info->mlx)
-		mlx_clear_window(0, info->win);
-	if (info->img)
-		mlx_destroy_image(info->mlx, info->img);
-	info->img = mlx_new_image(info->mlx, WIN_X, WIN_Y);
-	mlx_put_image_to_window(info->mlx, info->win, info->img, 0 ,0);
-	raycast(info);
-}
+	t_coordint	pixel;
+	t_col		flrsky;
 
-void	draw_vert_line(t_info *info, int x)
-{
-	int	y;
-
-	y = info->draw_start;
-	while (y < info->draw_end)
+	pixel.x = x;
+	env->img.data = mlx_get_data_addr(env->img.img, &env->img.bpp, &env->img.s, &env->img.e);
+	set_col(&flrsky, 102, 178, 255);
+	pixel.y = 0;
+	while (pixel.y < env->ray.draw_s)
 	{
-		mlx_pixel_put(info->mlx, info->win, x, y, info->col);
-		y++;
-	}	
+		mlx_image_put_pixel(env, &(env->img), pixel, &flrsky);
+		pixel.y++;
+	}
+	pixel.y = env->ray.draw_s;
+	while (pixel.y < env->ray.draw_e)
+	{
+		mlx_image_put_pixel(env, &(env->img), pixel, col);
+		pixel.y++;
+	}
+	set_col(&flrsky, 64, 64, 64);
+	pixel.y = env->ray.draw_e;
+	while (pixel.y < WIN_X)
+	{
+		mlx_image_put_pixel(env, &(env->img), pixel, &flrsky);
+		pixel.y++;
+	}
 }

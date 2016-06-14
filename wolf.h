@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 09:26:44 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 15:14:58 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,67 +25,111 @@
 # define UP 126
 # define DOWN 125
 
+typedef struct	s_col
+{
+	int			r;
+	int			g;
+	int			b;
+}				t_col;
+
+typedef struct	s_coord
+{
+	double		x;
+	double		y;
+}				t_coord;
+
+typedef struct	s_coordint
+{
+	int			x;
+	int			y;
+}				t_coordint;
+
+typedef struct	s_move
+{
+	int			up;
+	int			down;
+	int			left;
+	int			right;
+}				t_move;
+
+typedef struct	s_ray
+{
+	t_coord		pos;
+	t_coord		dir;
+	t_coord		plane;
+	t_coord		perpwall;
+	t_coord		deltadist;
+	t_coordint	posmap;
+	int			line_h;
+	int			draw_s;
+	int			draw_e;
+}				t_ray;
+
 typedef struct	s_info
 {
-	void		*mlx;
-	void		*win;
-	void		*img;
-	void		*img_data;
-	char		**map;
-	int			rows;
-	int			cols;
-	int			map_x;
-	int			map_y;
-	int			step_x;
-	int			step_y;
-	int			hit;
-	int			side;
-	int			line_height;
-	int			draw_start;
-	int			draw_end;
-	int			col;
-	clock_t		clock;
-	double		old_dir_x;
-	double		old_plane_x;
-	double		move_speed;
-	double		rot_speed;
-	double		side_dist_x;
-	double		side_dist_y;
-	double		delta_dist_x;
-	double		delta_dist_y;
-	double		perp_wall_dist;
-	double		pos_x;
-	double		pos_y;
-	double		dir_x;
-	double		dir_y;
-	double		plane_x;
-	double		plane_y;
-	double		time;
-	double		old_time;
-	double		frame_time;
+	t_coord		pos;
+	t_coord		dir;
+	t_coordint	step;
+	t_move		move;
+	double		r_speed;
+	double		m_speed;
 	double		camera_x;
-	double		raypos_x;
-	double		raypos_y;
-	double		raydir_x;
-	double		raydir_y;
+	int			hit;
+	int			wallside;
+	int			sprint;
 }				t_info;
 
-void			readmap(char *file, t_info *info);
+typedef struct	s_map
+{
+	char		**map;
+	int			display;
+	int			x;
+	int			y;
+}				t_map;
 
-void			init_info(t_info *info, int x, int y);
+typedef struct	s_img
+{
+	void		*img;
+	char		*data;
+	int			bpp;
+	int			s;
+	int			e;
+}				t_img;
 
-int				key_hook(int keycode, t_info *info);
+typedef	struct	s_env
+{
+	void		*win;
+	void		*mlx;
+	t_img		img;
+	t_info		info;
+	t_ray		ray;
+	t_map		map;
+	double		time;
+	double		o_time;
+	double		f_time;
+}				t_env;
 
-void			cleanup(t_info *info);
+void			init_info(t_env *env, char *file, int x, int y);
 
-void			raycast(t_info *info);
+int				loop_hook(t_env *env);
 
-void			draw_vert_line(t_info *info, int x);
+void			get_fps(t_env *env);
 
-int				key_press(int keycode, t_info *info);
+void			get_col(t_env *env, t_col *col);
 
-int				key_release(int keycode, t_info *info);
+void			set_col(t_col *col, int r, int g, int b);
 
-int				rerender(t_info *info);
+int				key_press(int keycode, t_env *env);
+
+int				key_release(int keycode, t_env *env);
+
+void			turn(t_env *env, char dir);
+
+void    		mlx_image_put_pixel(void *mlx, t_img *i,
+		t_coordint p, t_col *c);
+
+void			move_player(t_env *env);
+
+void			draw_line(t_env *env, int x, t_col *col);
 
 #endif

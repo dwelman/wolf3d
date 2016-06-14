@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:22:07 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 15:02:32 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 16:26:00 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,16 @@ void	draw_line(t_env *env, int x, t_col *col)
 		pixel.y++;
 	}
 	pixel.y = env->ray.draw_s;
-	while (pixel.y < env->ray.draw_e)
+	while (pixel.y < env->ray.draw_e && pixel.y)
 	{
+		if (pixel.y > WIN_Y || pixel.y < 0)
+			ft_printf("err ! = %d", pixel.y);
 		mlx_image_put_pixel(env, &(env->img), pixel, col);
 		pixel.y++;
 	}
 	set_col(&flrsky, 64, 64, 64);
 	pixel.y = env->ray.draw_e;
-	while (pixel.y < WIN_X)
+	while (pixel.y < WIN_Y)
 	{
 		mlx_image_put_pixel(env, &(env->img), pixel, &flrsky);
 		pixel.y++;

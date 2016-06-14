@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 15:29:42 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 16:35:38 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,13 @@ static void	calculate(t_env *env)
 		wall_dist = fabs((env->ray.posmap.x - env->ray.pos.x + (1 - env->info.step.x) / 2) / env->ray.dir.x);
 	else
 		wall_dist = fabs((env->ray.posmap.y - env->ray.pos.y + (1 - env->info.step.y) / 2) / env->ray.dir.y);
-	env->ray.line_h = abs((int)(WIN_X / wall_dist));
-	env->ray.draw_s = (-1 * (env->ray.line_h)) / 2 + WIN_X / 2;
+	env->ray.line_h = abs((int)(WIN_Y / wall_dist));
+	env->ray.draw_s = (-1 * (env->ray.line_h)) / 2 + WIN_Y / 2;
 	if (env->ray.draw_s < 0)
 		env->ray.draw_s = 0;
-	env->ray.draw_e = env->ray.line_h / 2 + WIN_X / 2;
-	if (env->ray.draw_s >= WIN_X)
-		env->ray.draw_s = WIN_X - 1;
+	env->ray.draw_e = env->ray.line_h / 2 + WIN_Y / 2;
+	if (env->ray.draw_e >= WIN_Y)
+		env->ray.draw_e = WIN_Y - 1;
 }
 
 int			loop_hook(t_env *env)

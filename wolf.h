@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 08:40:24 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 09:12:40 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <mlx.h>
 # include <math.h>
+# include <time.h>
 # define WIN_X 512
 # define WIN_Y 384
 # define ESC 53
@@ -42,6 +43,7 @@ typedef struct	s_info
 	int			draw_start;
 	int			draw_end;
 	int			col;
+	clock_t		clock;
 	double		old_dir_x;
 	double		old_plane_x;
 	double		move_speed;
@@ -59,6 +61,7 @@ typedef struct	s_info
 	double		plane_y;
 	double		time;
 	double		old_time;
+	double		frame_time;
 	double		camera_x;
 	double		raypos_x;
 	double		raypos_y;

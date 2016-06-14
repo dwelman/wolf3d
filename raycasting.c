@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 08:36:41 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 09:12:38 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,12 @@ void	raycast(t_info *info)
 		draw_vert_line(info, x);
 		x++;
 	}
-	info->move_speed = 0.2;
-	info->rot_speed = 0.2;
+	info->old_time = info->time;
+	info->time = (double)clock();
+	info->frame_time = (info->time - info->old_time) / 1000.0;
+	info->move_speed = info->frame_time * 0.03;
+	info->rot_speed = info->frame_time * 0.03;
+	printf("move_speed = %f\n", info->move_speed);
 	//mlx_key_hook(info->win, key_press, info);
 	mlx_clear_window(0, info->win);
 	ft_printf("loop\n");

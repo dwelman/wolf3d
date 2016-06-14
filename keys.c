@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 09:30:46 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 15:08:59 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 15:30:35 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	turn(t_env *env, char dir)
 	int		sign;
 
 	sign = 1;
-	if (dir == 'R')
+	if (dir == 'r')
 		sign = -1;
 	temp_dir = env->info.dir.x;
 	temp_plane = env->ray.plane.x;

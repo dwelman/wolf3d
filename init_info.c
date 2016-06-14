@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:28:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 15:16:02 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/14 15:29:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	init_info(t_env *env, char *file, int x, int y)
 		ft_printerr("Error reading from file %s\n", file);
 	if (!(map = (char **)malloc(sizeof(char *) * y + 1)))
 		ft_printerr("Error assigning memory for map\n");
-	while (i < x)
+	while (i < y)
 	{
-		if (get_next_line(fd, &map[y]) == -1)
+		if (get_next_line(fd, &map[i]) == -1)
 			ft_printerr("Error reading map\n");
 		i++;
 	}

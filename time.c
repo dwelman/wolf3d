@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 13:30:10 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 13:34:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/15 15:03:19 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	get_fps(t_env *env)
 	env->f_time = env->time - env->o_time;
 	env->info.m_speed = env->f_time * 0.004;
 	env->info.r_speed = env->f_time * 0.004;
+	if (env->info.sprint == 1)
+		env->info.m_speed *= 2;
 }

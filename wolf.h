@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 14:46:30 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/15 14:47:44 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define RIGHT 124
 # define UP 126
 # define DOWN 125
+# define SHIFT 257
 
 typedef struct	s_col
 {

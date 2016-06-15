@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 15:14:15 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/15 17:21:18 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ static void	calculate(t_env *env)
 	env->ray.draw_e = env->ray.line_h / 2 + WIN_Y / 2;
 	if (env->ray.draw_e >= WIN_Y)
 		env->ray.draw_e = WIN_Y - 1;
+	get_img(env->map.map[env->ray.posmap.x][env->ray.posmap.y], env);
 }
 
 int			loop_hook(t_env *env)
@@ -110,6 +111,8 @@ int			loop_hook(t_env *env)
 		draw_line(env, x, &col);
 		x++;
 	}
+//	get_texel(1, 0, env, '*');
+//	mlx_put_image_to_window(env->mlx, env->win, env->textures[1].img, 64, 0);
 	get_fps(env);
 	move_player(env);
 	mlx_put_image_to_window(env->mlx, env->win, env->img.img, 0, 0);

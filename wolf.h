@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 14:47:44 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/15 16:46:51 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define UP 126
 # define DOWN 125
 # define SHIFT 257
+# define ENVT env->textures
 
 typedef struct	s_col
 {
@@ -98,6 +99,8 @@ typedef struct	s_img
 	int			s;
 	int			e;
 	char		id;
+	int			x;
+	int			y;
 }				t_img;
 
 typedef	struct	s_env
@@ -113,6 +116,7 @@ typedef	struct	s_env
 	double		f_time;
 	int			tex_count;
 	t_img		*textures;
+	int			tex_num;
 }				t_env;
 
 void			init_info(t_env *env, char *file);
@@ -139,5 +143,11 @@ void			move_player(t_env *env);
 void			draw_line(t_env *env, int x, t_col *col);
 
 void			free_map(t_env *env);
+
+t_img			*get_img(char id, t_env *env);
+
+t_col			get_texel(int x, int y, t_env *env, char id);
+
+void			init_textures(t_env *env);
 
 #endif

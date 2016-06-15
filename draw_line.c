@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:22:07 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 16:26:00 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/15 07:41:46 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	draw_line(t_env *env, int x, t_col *col)
 		pixel.y++;
 	}
 	pixel.y = env->ray.draw_s;
-	while (pixel.y < env->ray.draw_e && pixel.y)
+	while (pixel.y < env->ray.draw_e)
 	{
 		if (pixel.y > WIN_Y || pixel.y < 0)
 			ft_printf("err ! = %d", pixel.y);

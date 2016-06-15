@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 14:21:13 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/15 14:44:02 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ typedef struct	s_img
 	int			bpp;
 	int			s;
 	int			e;
+	char		id;
 }				t_img;
 
 typedef	struct	s_env
@@ -109,6 +110,8 @@ typedef	struct	s_env
 	double		time;
 	double		o_time;
 	double		f_time;
+	int			tex_count;
+	t_img		*textures;
 }				t_env;
 
 void			init_info(t_env *env, char *file, int x, int y);

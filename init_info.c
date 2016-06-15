@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:28:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 17:11:06 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/15 14:11:46 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,28 @@ int		count_lines(char *file)
 	return (i);
 }
 
+void	get_player(t_env *env)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (x < env->map.x)
+	{
+		y = 0;
+		while (y < env->map.y)
+		{
+			if (env->map.map[x][y] == 'X')
+			{
+				env->info.pos.x = x;
+				env->info.pos.y = y;
+			}
+			y++;
+		}
+		x++;
+	}
+}
+
 void	init_info(t_env *env, char *file, int x, int y)
 {
 	int		i;
@@ -48,27 +70,16 @@ void	init_info(t_env *env, char *file, int x, int y)
 	{
 		if (get_next_line(fd, &map[i]) == -1)
 			ft_printerr("Error reading map\n");
-		if (ft_strlen(map[i]) > env->map.x)
+		if ((int)ft_strlen(map[i]) > env->map.x)
 			env->map.x = ft_strlen(map[i]);
 		i++;
 	}
-	env->info.pos.x = x / 2;
-	env->info.pos.y = y / 2;
 	env->info.dir.x = -1;
 	env->info.dir.y = 0;
 	env->ray.plane.x = 0;
 	env->ray.plane.y = 0.80;
 	env->time = 0;
 	env->o_time = 0;
-	env->map.map = map; //remember to free this later
-}
-
-void	free_map(t_env *env)
-{
-	int	i;
-
-	i = -1;
-	while (++i < env->map.y)
-		free(env->map.map[i]);
-	free(env->map.map[i]);
+	env->map.map = map;
+	get_player(env);
 }

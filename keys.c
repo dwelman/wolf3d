@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 09:30:46 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 17:10:09 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/15 14:15:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		key_release(int keycode, t_env *env)
 	if (keycode == ESC)
 	{
 		ft_printf("Thanks for playing!\n");
-		free_map(env);
+		//free_map(env);
 		exit(0);
 	}
 	if (keycode == LEFT)

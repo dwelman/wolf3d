@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/14 16:35:38 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/15 14:12:34 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	dda_alg(t_env *env)
 			env->ray.posmap.y += env->info.step.y;
 			env->info.wallside = 1;
 		}
-		if (env->map.map[env->ray.posmap.x][env->ray.posmap.y] == '1')
+		if (env->map.map[env->ray.posmap.x][env->ray.posmap.y] == '*')
 			env->info.hit = 1;
 	}
 }

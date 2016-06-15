@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 07:42:21 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/15 14:21:13 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <sys/time.h>
 # define WIN_X 640
 # define WIN_Y 480
+# define TEX_X 64
+# define TEX_Y 64
 # define ESC 53
 # define LEFT 123
 # define RIGHT 124

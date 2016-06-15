@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 14:44:02 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/15 14:46:30 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ typedef	struct	s_env
 	t_img		*textures;
 }				t_env;
 
-void			init_info(t_env *env, char *file, int x, int y);
+void			init_info(t_env *env, char *file);
 
 int				loop_hook(t_env *env);
 

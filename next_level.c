@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/17 09:02:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 15:11:50 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/17 15:17:46 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	load_next_level(t_env *env)
 	if (env->level < env->num_levels)
 	{
 		free_level(env);
-		ft_printf("level freed");
 		init_info(env);
 	}
 	else

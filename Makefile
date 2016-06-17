@@ -6,14 +6,14 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/13 07:55:06 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/15 15:06:09 by daviwel          ###   ########.fr        #
+#    Updated: 2016/06/15 15:12:00 by ddu-toit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
 SRC = main.c init_info.c keys.c raycasting.c draw_line.c movement.c time.c \
-	  mlx_image_put_pixel.c colours.c
+	  mlx_image_put_pixel.c colours.c textures.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -48,6 +48,6 @@ q:
 	make clean
 
 run:
-	./wolf3d map
+	./wolf3d map2
 
 qr: q run

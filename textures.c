@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 15:01:10 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/17 07:54:42 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/17 07:55:31 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_col	get_texel(int x, int y, t_env *env, char id)
 		ft_printerr("Error finding texture %c\n", id);
 	t_coordint	p;
 	p.y = 0;
-	mlx_put_image_to_window(env->mlx, env->win, cur->img, 64, 0);
+//	mlx_put_image_to_window(env->mlx, env->win, cur->img, 64, 0);
 	img = cur->img;
 	while (p.y < TEX_Y)
 	{

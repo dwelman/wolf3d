@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 07:52:50 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/17 08:34:33 by daviwel          ###   ########.fr       */
 /*   Updated: 2016/06/15 16:46:51 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -119,9 +119,14 @@ typedef	struct	s_env
 	int			tex_count;
 	t_img		*textures;
 	int			tex_num;
+	char		**levels;
+	int			level;
+	int			num_levels;
 }				t_env;
 
-void			init_info(t_env *env, char *file);
+void			read_levels(t_env *env, char *str);
+
+void			init_info(t_env *env);
 
 int				loop_hook(t_env *env);
 
@@ -151,5 +156,7 @@ t_img			*get_img(char id, t_env *env);
 t_col			get_texel(int x, int y, t_env *env, char id);
 
 void			init_textures(t_env *env);
+
+int				count_lines(char *file);
 
 #endif

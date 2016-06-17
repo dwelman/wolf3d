@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 13:19:27 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 11:02:51 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/17 14:03:40 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int			loop_hook(t_env *env)
 	t_col	col;
 
 	x = 0;
+	if (env->win == NULL || env->mlx == NULL)
+		exit(0);
 	if (env->img.img != NULL)
 	{
 		mlx_destroy_image(env->mlx, env->img.img);

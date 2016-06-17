@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 13:37:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 08:12:30 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/17 13:36:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	get_col(t_env *env, t_col *col)
 	{
 		if (env->wall_type == 0)
 			if (env->info.step.x < 0)
-				set_col(col, 0, 0, 255);
+				set_col(col, 51, 0, 102);
 			else
-				set_col(col, 0, 102, 0);
+				set_col(col, 0, 0, 102);
 		else
 			set_col(col, 255, 215, 0);
 	}
@@ -35,9 +35,9 @@ void	get_col(t_env *env, t_col *col)
 	{
 		if (env->wall_type == 0)
 			if (env->info.step.y < 0)
-				set_col(col, 0, 0, 128);
+				set_col(col, 0, 51, 0);
 			else
-				set_col(col, 0, 204, 0);
+				set_col(col, 192, 192, 192);
 		else
 			set_col(col, 255, 215, 0);
 	}

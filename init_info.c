@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:28:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/15 15:14:20 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/15 15:57:55 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	init_info(t_env *env, char *file)
 	env->time = 0;
 	env->o_time = 0;
 	env->map.map = map;
+	init_textures(env);
 	get_player(env);
 	close(fd);
 }

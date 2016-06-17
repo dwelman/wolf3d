@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 08:34:33 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/17 10:56:43 by daviwel          ###   ########.fr       */
 /*   Updated: 2016/06/15 16:46:51 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -158,5 +158,7 @@ t_col			get_texel(int x, int y, t_env *env, char id);
 void			init_textures(t_env *env);
 
 int				count_lines(char *file);
+
+void			load_next_level(t_env *env);
 
 #endif

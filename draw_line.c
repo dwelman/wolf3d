@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:22:07 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 15:04:02 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/17 15:15:42 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	draw_line(t_env *env, int x, t_col *col)
 	t_col		flrsky;
 
 	pixel.x = x;
-	env->img.data = (unsigned char*)mlx_get_data_addr(env->img.img,
+	env->img.data = mlx_get_data_addr(env->img.img,
 			&env->img.bpp, &env->img.s, &env->img.e);
 	set_col(&flrsky, 102, 178, 255);
 	pixel.y = 0;

@@ -5,9 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 10:56:43 by daviwel          ###   ########.fr       */
-/*   Updated: 2016/06/15 16:46:51 by ddu-toit         ###   ########.fr       */
+/*   Created: 2016/06/17 14:49:48 by daviwel           #+#    #+#             */
+/*   Updated: 2016/06/17 15:01:53 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +94,7 @@ typedef struct	s_map
 typedef struct	s_img
 {
 	void			*img;
-	unsigned char	*data;
+	char			*data;
 	int				bpp;
 	int				s;
 	int				e;
@@ -142,7 +141,7 @@ int				key_release(int keycode, t_env *env);
 
 void			turn(t_env *env, char dir);
 
-void    		mlx_image_put_pixel(void *mlx, t_img *i,
+void			mlx_image_put_pixel(void *mlx, t_img *i,
 		t_coordint p, t_col *c);
 
 void			move_player(t_env *env);

@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:26:26 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/13 13:23:29 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/17 15:04:48 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	readmap(char *file, t_info *info)
 			ft_printerr("Error reading map\n");
 		y++;
 	}
-	info->map = map;	//remember to free this later
+	info->map = map;
 }

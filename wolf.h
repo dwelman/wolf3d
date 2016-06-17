@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/17 14:49:48 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 15:01:53 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/17 15:09:48 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,6 @@ typedef	struct	s_env
 	double		o_time;
 	double		f_time;
 	int			wall_type;
-	int			tex_count;
-	t_img		*textures;
-	int			tex_num;
 	char		**levels;
 	int			level;
 	int			num_levels;

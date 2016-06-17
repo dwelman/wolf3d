@@ -6,14 +6,14 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/13 07:55:06 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/17 09:17:48 by daviwel          ###   ########.fr        #
+#    Updated: 2016/06/17 15:13:35 by ddu-toit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = wolf3d
 
 SRC = main.c init_info.c keys.c raycasting.c draw_line.c movement.c time.c \
-	  mlx_image_put_pixel.c colours.c textures.c read_levels.c next_level.c
+	  mlx_image_put_pixel.c colours.c read_levels.c next_level.c
 
 OBJ = $(SRC:.c=.o)
 

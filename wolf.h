@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 08:09:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 07:51:38 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/17 07:52:50 by ddu-toit         ###   ########.fr       */
 /*   Updated: 2016/06/15 16:46:51 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -94,14 +94,14 @@ typedef struct	s_map
 
 typedef struct	s_img
 {
-	void		*img;
-	char		*data;
-	int			bpp;
-	int			s;
-	int			e;
-	char		id;
-	int			x;
-	int			y;
+	void			*img;
+	unsigned char	*data;
+	int				bpp;
+	int				s;
+	int				e;
+	char			id;
+	int				x;
+	int				y;
 }				t_img;
 
 typedef	struct	s_env

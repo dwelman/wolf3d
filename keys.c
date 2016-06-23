@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 09:30:46 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 15:06:23 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/23 07:13:42 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ int		key_press(int keycode, t_env *env)
 	if (keycode == SHIFT)
 		env->info.sprint = 1;
 	return (0);
+}
+
+int		close_window(t_env *env)
+{
+	ft_printf("Thanks for playing!\n");
+	exit(0);
+	env->level = 0;
 }
 
 int		key_release(int keycode, t_env *env)

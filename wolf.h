@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/17 14:49:48 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/17 15:09:48 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/23 07:17:39 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <mlx.h>
 # include <math.h>
 # include <sys/time.h>
-# define WIN_X 640
-# define WIN_Y 480
+# define WIN_X 800
+# define WIN_Y 600
 # define TEX_X 64
 # define TEX_Y 64
 # define ESC 53
@@ -156,5 +156,7 @@ void			init_textures(t_env *env);
 int				count_lines(char *file);
 
 void			load_next_level(t_env *env);
+
+int				close_window(t_env *env);
 
 #endif
